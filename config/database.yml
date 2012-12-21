@@ -11,8 +11,7 @@ development:
   host: 127.0.0.1
 
 production:
-  adapter: mysql2
+  adapter: pg
   database: potluck_new_app
   username: root
   password: root
-  host: 127.0.0.1
