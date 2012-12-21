@@ -1,0 +1,38 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<table id="customers" style="width:50%;">
+<tr>
+  <th colspan="2">Participant Name: <%= participant.name.capitalize %></th>
+</tr>
+ 
+<tr class="alt">
+  <td><b>Type Of Food:</b></td>
+  <td><%= participant.type_of_food %></td>
+</tr>
+
+<tr>
+  <td><b>Name Of Food:</b></td>
+  <td><%= participant.name_of_food %></td>
+</tr>
+ 
+<tr class="alt">
+  <td><b>Food will serve:</b></td>
+  <td><%= participant.quantity %> People</td>
+</tr>
+
+
+<tr>
+  <td><b>Rate per Person:</b></td>
+  <td><%= participant.rate_per_person %></td>
+</tr>
+
+
+<tr class="alt">
+  <td><%= link_to 'Destroy Participant', [participant.event, participant],:confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%#= link_to 'Edit Participant', edit_event_participant_path %></td>
+
+</tr>
+</table>

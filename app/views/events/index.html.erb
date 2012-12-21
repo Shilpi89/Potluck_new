@@ -1,0 +1,32 @@
+
+<h1>Listing Potluck Events</h1>
+
+<table id="customers" style="width:100%;">
+  <tr>
+    <th>Name</th>
+    <th>Date of event</th>
+    <th>Venue</th>
+    <th>Description</th>
+    <th>Organizing team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.date_of_event %></td>
+    <td><%= event.venue %></td>
+    <td><%= event.description %></td>
+    <td><%= event.organizing_team %></td>
+    <td><%= link_to 'Common Participate!', event %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event', new_event_path %>

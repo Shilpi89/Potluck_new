@@ -1,0 +1,40 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table id="customers" style="width:50%;">
+
+  <tr>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr class="alt">
+    <td><%= f.label :date_of_event %></td>
+    <td><%= f.date_select :date_of_event %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :venue %></td>
+    <td><%= f.text_field :venue %></td>
+  </tr>
+  <tr class="alt">
+    <td><%= f.label :description %></td>
+    <td><%= f.text_area :description, :rows => 3 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :organizing_team %></td>
+    <td><%= f.select :organizing_team,[['Ronak','Ronak'],['Yash','Yash'],['Hemali','Hemali'],['Nikita','Nikita'],['Manasi','Manasi'],['Aaditi','Aaditi'],['Shilpi','Shilpi']],{:prompt => "Please select"},{:multiple => true} %></td>
+  </tr>
+  <tr class="alt">
+    <td colspan="2"><%= f.submit %></td>
+  </tr>
+</table>
+<% end %>

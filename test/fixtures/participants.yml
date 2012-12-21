@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type_of_food: MyString
+  name_of_food: MyString
+  quantity: 1
+  rate_per_person: 1
+  event: 
+
+two:
+  name: MyString
+  type_of_food: MyString
+  name_of_food: MyString
+  quantity: 1
+  rate_per_person: 1
+  event: 

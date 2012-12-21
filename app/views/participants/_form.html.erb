@@ -1,0 +1,33 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= form_for([@event, @event.participants.build]) do |f| %>
+
+<table id="customers" style="width:50%;">
+  <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+  </tr>
+  <tr class="alt">
+    <td><%= f.label :type_of_food %></td>
+    <td><%= f.select :type_of_food, [['Starter','Starter'],['Main Course','Main Course'],['Dessert','Dessert']] %></td>
+  </tr>
+  <tr>
+      <td><%= f.label :name_of_food %></td>
+      <td><%= f.text_field :name_of_food %></td>
+  </tr>
+  <tr class="alt">
+      <td><%= f.label :quantity %></td>
+      <td><%= f.text_field :quantity %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :rate_per_person %></td>
+    <td><%= f.text_field :rate_per_person %></td>
+  </tr>
+  <tr class="alt">
+      <td colspan="2"><%= f.submit %></td>
+  </tr>
+</table>
+<% end %>
