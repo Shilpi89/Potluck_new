@@ -15,4 +15,4 @@ production:
   database: potluck_new_app
   username: root
   password: root
-  
+  host: 127.0.0.1
