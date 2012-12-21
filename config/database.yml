@@ -14,5 +14,5 @@ production:
   adapter: mysql2
   database: potluck_new_app
   username: root
-  password: 
+  password: root
   
