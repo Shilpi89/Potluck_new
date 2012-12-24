@@ -10,6 +10,7 @@ group :development do
 end
 
 gem 'devise'
+gem 'dynamic_form'
 
 group :production do
   gem 'pg'

@@ -4,7 +4,7 @@
 %>
 
 <%= form_for([@event, @event.participants.build]) do |f| %>
-
+<%= f.error_messages %>
 <table id="customers" style="width:50%;">
   <tr>
       <td><%= f.label :name %></td>

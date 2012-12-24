@@ -6,6 +6,7 @@ def create
 end
 
 def edit
+  @event = Event.find(params[:event_id])
   @participant = @event.participants.find(params[:id])
 end
 

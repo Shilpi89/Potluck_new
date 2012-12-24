@@ -1,24 +1,15 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-h1, h2 {
-  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-#signout{
-  text-align: right;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 pre {
@@ -40,7 +31,7 @@ a {
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px;   
+    margin-bottom: 10px;
   }
 }
 

@@ -19,7 +19,7 @@
     <td><%= event.date_of_event %></td>
     <td><%= event.venue %></td>
     <td><%= event.description %></td>
-    <td><%= event.organizing_team %></td>
+    <td><%= event.organizing_team[10..-1] %></td>
     <td><%= link_to 'Common Participate!', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

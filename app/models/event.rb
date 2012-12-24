@@ -11,6 +11,5 @@ class Event < ActiveRecord::Base
 
 
   has_many :participants, :dependent => :destroy
-  has_many :special_options
 
 end
