@@ -7,32 +7,41 @@
 <tr>
   <th colspan="2">Participant Name: <%= participant.name.capitalize %></th>
 </tr>
- 
+
 <tr class="alt">
+  <td><b>Veg/Non-Veg:</b></td>
+  <% if participant.veg %>
+    <td>Veg</td>
+  <%else%>
+    <td>Non-Veg</td>
+  <%end%>
+</tr>
+ 
+<tr>
   <td><b>Type Of Food:</b></td>
   <td><%= participant.type_of_food %></td>
 </tr>
 
-<tr>
+<tr class="alt">
   <td><b>Name Of Food:</b></td>
   <td><%= participant.name_of_food %></td>
 </tr>
  
-<tr class="alt">
+<tr>
   <td><b>Food will serve:</b></td>
   <td><%= participant.quantity %> People</td>
 </tr>
 
 
-<tr>
+<tr class="alt">
   <td><b>Rate per Person:</b></td>
   <td><%= participant.rate_per_person %></td>
 </tr>
 
 
-<tr class="alt">
+<tr>
   <td><%= link_to 'Destroy Participant', [participant.event, participant],:confirm => 'Are you sure?', :method => :delete %></td>
-  <td><%#= link_to 'Edit Participant', edit_event_participant_path(@participant) %></td>
+  <td><%#= link_to 'Edit Participant' %></td>
 
 </tr>
 </table>

@@ -1,32 +1,36 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
-
 <%= form_for([@event, @event.participants.build]) do |f| %>
 <%= f.error_messages %>
+
+
 <table id="customers" style="width:50%;">
   <tr>
       <td><%= f.label :name %></td>
       <td><%= f.text_field :name %></td>
   </tr>
-  <tr class="alt">
+  <tr class="alt">
+    <td><%= f.label :veg %></td>
+    <td>
+    <%= f.radio_button :veg, '1', :checked => true %> Veg
+    <%= f.radio_button :veg, '0' %> Non-Veg
+    </td>
+  </tr>
+  <tr>
     <td><%= f.label :type_of_food %></td>
     <td><%= f.select :type_of_food, [['Starter','Starter'],['Main Course','Main Course'],['Dessert','Dessert']] %></td>
   </tr>
-  <tr>
+  <tr class="alt">
       <td><%= f.label :name_of_food %></td>
       <td><%= f.text_field :name_of_food %></td>
   </tr>
-  <tr class="alt">
+  <tr>
       <td><%= f.label :quantity %></td>
       <td><%= f.text_field :quantity %></td>
   </tr>
-  <tr>
+  <tr class="alt">
     <td><%= f.label :rate_per_person %></td>
     <td><%= f.text_field :rate_per_person %></td>
   </tr>
-  <tr class="alt">
+  <tr>
       <td colspan="2"><%= f.submit %></td>
   </tr>
 </table>

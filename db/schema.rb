@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224131716) do
+ActiveRecord::Schema.define(:version => 20121226102202) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(:version => 20121224131716) do
     t.string   "venue"
     t.text     "description"
     t.string   "organizing_team"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "menu_file_name"
+    t.string   "menu_content_type"
+    t.integer  "menu_file_size"
+    t.datetime "menu_updated_at"
   end
 
   create_table "participants", :force => true do |t|
@@ -32,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20121224131716) do
     t.integer  "event_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.boolean  "veg"
   end
 
   add_index "participants", ["event_id"], :name => "index_participants_on_event_id"

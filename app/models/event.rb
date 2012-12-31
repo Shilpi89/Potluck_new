@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  attr_accessible :date_of_event, :description, :name, :organizing_team, :venue
+  attr_accessible :date_of_event, :description, :name, :organizing_team, :venue, :menu
+  has_attached_file :menu
     validates :name, :length => { :minimum => 2 }
 
     validates :description, :presence => true
