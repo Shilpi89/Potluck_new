@@ -1,0 +1,56 @@
+TO DO LIST
+
+1. git hub ssh password creation----done
+2. vm ware----done
+
+
+
+
+
+
+
+Cereate a application with Book, User
+	-User
+		Name
+		login
+		active(true/false)	
+	-Role
+		name	
+    	-Book
+		name
+		status(available/borrowed)	
+		borrower
+		
+2. Use Devise gem for authentication
+3. Admin Can Create/Edit users/books
+4. User can borrow books that are available(just change status from available to borrowed) and make books that are borrowed by himself as available
+5. Create custom action to change status of book from borrowed to available. Only admin can do this.
+6. Restrict the access with before filters
+
+
+Assignment III(Library) -
+1.The Book form should contain Name, status, borrower, date of release(Use date helper), author name, no of pages, Type(Comic, Literature, Magazine, etc)
+
+2. In the user index page use the Tabs (http://jqueryui.com/tabs/) to display 2 section of users (active and inactive)
+
+3. Show all books issued to a user in the user show page
+
+4. In the user index page for admin, If the number of books issued to a user is greater than 3, then display a mark in the row for that user(use a helper method)
+
+5. For the admin role, add buttons in the layout to redirect to Book and Student index pages
+
+Feel free to get in touch if you have any issues. 
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+Application: Potluck Management 
+Description: Application should allow ODC members to create and manage different potluck events for ODC. 
+Acceptance Criteria: 
+1. Application should be able to create and display different potluck events for ODC. 
+2. Manage corresponding details of each potluck like different category of food, who is bringing what, organizer team, timestamp and other details. 
+3. ODC member should be able to select category of food he/she wishes to prepare and get for the event and save the details. 
+
+Nice to have - Upload file attachment (menu pic) as part of potluck details.
+

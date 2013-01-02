@@ -26,7 +26,7 @@
 
   <tr>
   <td><b>Organizing team:</b></td>
-  <td><%= @event.organizing_team[10..-1] %></td>
+  <td><%= @event.organizing_team[10..-1]%></td>
   </tr>
   <tr class="alt">
   <td><b>Menu</b></td>
@@ -51,8 +51,11 @@
 <%= render @event.participants %>
 <%end%>
 
+<%  now = DateTime.now %>
+<%  unless @event.date_of_event < now %>
 <h3>Add a Participant:</h3>
 <%= render "participants/form" %>
+<%end%>
 
 <p><%= link_to 'Back', events_path %></p>
 

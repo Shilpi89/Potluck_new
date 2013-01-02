@@ -24,6 +24,11 @@
     <td><%= f.label :organizing_team %></td>
     <td><%= f.select :organizing_team,[['Ronak','Ronak'],['Yash','Yash'],['Hemali','Hemali'],['Nikita','Nikita'],['Manasi','Manasi'],['Aaditi','Aaditi'],['Shilpi','Shilpi']],{:prompt => "Please select"},{:multiple => true} %></td>
   </tr>
+
+  
+    <%#= f.label :organizing_team %>
+    <%#= f.collection_select :organizing_team, Event::ORGANIZING, :to_s, :humanize ,:prompt => "-Select a person", :multiple =>true %>
+  
   <tr class="alt">
     <td>Upload Menu</td>
     <td><%= f.file_field :menu %></td>

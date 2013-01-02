@@ -13,4 +13,7 @@ class Event < ActiveRecord::Base
 
   has_many :participants, :dependent => :destroy
 
+
+  #ORGANIZING= %w[Ronak Yash Himanshu Nikita Hemali Shilpi]
+
 end
