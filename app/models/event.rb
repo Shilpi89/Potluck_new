@@ -5,13 +5,14 @@ class Event < ActiveRecord::Base
 
     validates :description, :presence => true
 
-    validates :organizing_team, :presence => true
+    #validates :organizing_team, :presence => true
 
     validates :venue, :presence => true
 
 
 
   has_many :participants, :dependent => :destroy
+  has_and_belongs_to_many :organizers
 
 
   #ORGANIZING= %w[Ronak Yash Himanshu Nikita Hemali Shilpi]

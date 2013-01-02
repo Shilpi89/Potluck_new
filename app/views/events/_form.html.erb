@@ -1,4 +1,4 @@
-<%= form_for (@event), :html => { :multipart => true } do |f| %>
+<%= form_for (@event) do |f| %>
   <%= f.error_messages %>
 
 
@@ -21,14 +21,11 @@
     <td><%= f.text_area :description, :rows => 3 %></td>
   </tr>
   <tr>
-    <td><%= f.label :organizing_team %></td>
-    <td><%= f.select :organizing_team,[['Ronak','Ronak'],['Yash','Yash'],['Hemali','Hemali'],['Nikita','Nikita'],['Manasi','Manasi'],['Aaditi','Aaditi'],['Shilpi','Shilpi']],{:prompt => "Please select"},{:multiple => true} %></td>
+    <td><%= f.label :organizers %></td>
+    <td><%= select_tag "organizing_team", options_from_collection_for_select(Organizer.all, 'id', 'name',@event.organizers.map{ |j| j.id }), :multiple => true %></td>
   </tr>
-
   
-    <%#= f.label :organizing_team %>
-    <%#= f.collection_select :organizing_team, Event::ORGANIZING, :to_s, :humanize ,:prompt => "-Select a person", :multiple =>true %>
-  
+    
   <tr class="alt">
     <td>Upload Menu</td>
     <td><%= f.file_field :menu %></td>

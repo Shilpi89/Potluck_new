@@ -41,9 +41,10 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-
+    @organizers = Organizer.where(:id => params[:organizing_team])
+    @event.organizers << @organizers
     respond_to do |format|
-      if @event.save
+      if @event.save!
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
@@ -57,6 +58,9 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
+    @organizers = Organizer.where(:id => params[:organizing_team])
+    @event.organizers.destroy_all
+    @event.organizers << @organizers
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
