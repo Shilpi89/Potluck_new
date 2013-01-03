@@ -1,7 +1,8 @@
 
 <h1>Listing Potluck Events</h1>
-
-<table id="customers" style="width:100%;">
+<%  now = DateTime.now %>
+<table id="myTable" class="tablesorter" style="width:100%;">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Date of event</th>
@@ -13,8 +14,9 @@
     <th></th>
     <th></th>
   </tr>
-<%  now = DateTime.now %>
+  </thead>
 
+<tbody>
 <% @events.each do |event| %>
   <tr>
     <td><%= event.name %></td>
@@ -39,6 +41,7 @@
     <td colspan="2">Event already occurred </td>
   <%end%>
 <% end %>
+</tbody>
 </table>
 
 <br />
