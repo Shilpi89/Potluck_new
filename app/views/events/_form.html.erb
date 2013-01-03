@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td><%= f.label :organizers %></td>
-    <td><%= select_tag "organizing_team", options_from_collection_for_select(Organizer.all, 'id', 'name',@event.organizers.map{ |j| j.id }), :multiple => true %></td>
+    <td><%= select_tag "organizing_team", options_from_collection_for_select(User.all, 'id', 'name',@event.users.map{ |j| j.id }), :multiple => true %></td>
   </tr>
   
     

@@ -26,7 +26,7 @@
 
   <tr>
   <td><b>Organizing team:</b></td>
-  <td><%= @event.organizers.map(&:name).join(', ')%></td>
+  <td><%= @event.users.map(&:name).join(', ')%></td>
   </tr>
   <tr class="alt">
   <td><b>Menu</b></td>

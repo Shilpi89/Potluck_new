@@ -21,7 +21,7 @@
     <td><%= event.date_of_event %></td>
     <td><%= event.venue %></td>
     <td><%= event.description %></td>
-    <td><%= event.organizers.map(&:name).join(', ')%></td>
+    <td><%= event.users.map(&:name).join(', ')%></td>
     
     <td>
     <%if event.menu_file_name %>

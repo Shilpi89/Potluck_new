@@ -12,9 +12,9 @@ class Event < ActiveRecord::Base
 
 
   has_many :participants, :dependent => :destroy
-  has_and_belongs_to_many :organizers
+
+  has_and_belongs_to_many :users
 
 
-  #ORGANIZING= %w[Ronak Yash Himanshu Nikita Hemali Shilpi]
 
 end
