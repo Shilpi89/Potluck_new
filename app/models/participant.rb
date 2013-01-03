@@ -5,4 +5,14 @@ class Participant < ActiveRecord::Base
   validates :name, :name_of_food, :presence => true
   validates :quantity, :rate_per_person, :numericality => true, :allow_nil => false
 
+
+  def fund_amount(id)
+    @participant = Participant.where(:event_id => id)
+    @each_amount = 0
+    @participant.each do |participant|
+      @each_amount = @each_amount + ( participant.quantity * participant.rate_per_person )
+    end
+    @each_amount
+  end
+
 end
