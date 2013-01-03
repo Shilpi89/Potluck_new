@@ -1,0 +1,10 @@
+Potluck Event Application
+
+Heroku link: http://potluck-app.herokuapp.com
+
+Potluck is a meal to which each guest contributes food. This is an event where a particular date is decided and associates from the ODC participate by getting various food items, which they sell to raise some amount for any charity trust.
+
+In my application one can create/edit such Potluck events. Likewise, if someone is interested to participate, then they can sign in and add their participation details.
+
+
+
