@@ -12,6 +12,7 @@ end
 gem 'devise'
 gem 'dynamic_form'
 gem "paperclip", "~> 3.0"
+gem 'kaminari'
 
 group :production do
   gem 'pg'

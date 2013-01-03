@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
-  def index
-    @events = Event.all
 
+  def index
+    @events = Event.order("name").page(params[:page]).per(5)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }

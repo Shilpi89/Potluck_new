@@ -1,6 +1,7 @@
 
 <h1>Listing Potluck Events</h1>
 <%  now = DateTime.now %>
+<%= paginate @events %>
 <table id="myTable" class="tablesorter" style="width:100%;">
   <thead>
   <tr>
