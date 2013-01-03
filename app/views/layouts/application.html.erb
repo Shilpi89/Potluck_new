@@ -9,8 +9,8 @@
 <body>
 
 <%if user_signed_in?%>
-  <p><b>Welcome <%= current_user.name.capitalize %></b></p>
-  <p id="signout"><%= link_to 'Sign Out', destroy_user_session_path %></p>
+  <h3 style="color: #A7C942">Welcome <%= current_user.name.capitalize %></h3>
+  <h4 id="signout" style="color: grey;"><%= link_to 'Sign Out', destroy_user_session_path %></h4>
 <%end%>
 
 
