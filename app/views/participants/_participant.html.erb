@@ -2,47 +2,41 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 %>
+<%  now = DateTime.now %>
+<table id="myTable" class="tablesorter" style="width:100%;">
+  <thead>
+  <tr>
+    <th>Participant Name:</th>
+    <th>Veg/Non-Veg:</th>
+    <th>Type Of Food:</th>
+    <th>Name Of Food:</th>
+    <th>Food will serve:</th>
+    <th>Rate per Person:</th>
+    <%  unless @event.date_of_event < now %>
+    <th></th>
+    <%end%>
+  </tr>
+  </thead>
+<tbody>
 
-<table id="customers" style="width:50%;">
+<% @event.participants.each do |participant| %>
+  <%p @event.participants %>
 <tr>
-  <th style="width:50%" colspan="2">Participant Name: <%= participant.name.capitalize %></th>
-</tr>
-
-<tr class="alt">
-  <td><b>Veg/Non-Veg:</b></td>
-  <% if participant.veg %>
+  <td><%= participant.name.capitalize %></td>
+  <% if participant.veg %>
     <td>Veg</td>
   <%else%>
     <td>Non-Veg</td>
   <%end%>
+  <td><%= participant.type_of_food %></td>
+  <td><%= participant.name_of_food %></td>
+  <td><%= participant.quantity %> People</td>
+  <td>Rs. <%= participant.rate_per_person %></td>
+  
+  <%  unless @event.date_of_event < now %>
+  <td colspan="2"><%= link_to 'Destroy Participant', [participant.event, participant],:confirm => 'Are you sure?', :method => :delete %></td>
+  <%end%>
 </tr>
- 
-<tr>
-  <td><b>Type Of Food:</b></td>
-  <td><%= participant.type_of_food %></td>
-</tr>
-
-<tr class="alt">
-  <td><b>Name Of Food:</b></td>
-  <td><%= participant.name_of_food %></td>
-</tr>
- 
-<tr>
-  <td><b>Food will serve:</b></td>
-  <td><%= participant.quantity %> People</td>
-</tr>
-
-
-<tr class="alt">
-  <td><b>Rate per Person:</b></td>
-  <td>Rs. <%= participant.rate_per_person %></td>
-</tr>
-
-<%  now = DateTime.now %>
-<%  unless @event.date_of_event < now %>
-<tr>
-  <td colspan="2"><%= link_to 'Destroy Participant', [participant.event, participant],:confirm => 'Are you sure?', :method => :delete %></td>
 <%end%>
-
-</tr>
+</tbody>
 </table>

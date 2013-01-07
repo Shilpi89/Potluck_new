@@ -57,7 +57,7 @@
 <h3>No participants added</h3>
 <%else%>
 <h3>Participant Details</h3>
-<%= render @event.participants %>
+<%= render "participants/participant" %>
 <%end%>
 
 <%  now = DateTime.now %>
