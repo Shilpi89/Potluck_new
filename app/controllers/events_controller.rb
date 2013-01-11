@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   # GET /events.json
 
   def index
-    @events = Event.order("name").page(params[:page]).per(5)
+    @events = Event.order("name").page(params[:page]).per(10)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -82,6 +82,15 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_url }
       format.json { head :no_content }
+    end
+  end
+
+
+def menu
+    @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html  #menu.html.erb
+      format.json { render json: @event }
     end
   end
 end

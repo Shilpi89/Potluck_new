@@ -1,0 +1,89 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<a href="#" onclick="window.print();return false;">Print Menu</a>
+
+<h3 style="color:#A7C942;"><%= @event.name.capitalize %>Potluck Menu</h3>
+<body>
+  <h3>Veg</h3>
+<table id="customers" style="width:80%;">
+
+
+<tr>
+  <th colspan="2">Starters</th>
+</tr>
+<% @event.participants.each do |participant| %>
+
+<tr>
+  <% if participant.type_of_food == 'Starter' && participant.veg %>
+    <td><%= participant.name_of_food %></td>
+    <td>Rs. <%= participant.rate_per_person %></td>
+  <%end%>
+</tr>
+<%end%>
+<tr>
+  <th colspan="2">Main Course</th>
+</tr>
+<% @event.participants.each do |participant| %>
+<tr>
+  <% if participant.type_of_food == 'Main Course' && participant.veg %>
+    <td><%= participant.name_of_food %></td>
+    <td>Rs. <%= participant.rate_per_person %></td>
+  <%end%>
+</tr>
+<%end%>
+<tr>
+  <th colspan="2">Dessert</th>
+</tr>
+<% @event.participants.each do |participant| %>
+<tr>
+  <% if participant.type_of_food == 'Dessert' && participant.veg %>
+    <td><%= participant.name_of_food %></td>
+    <td>Rs. <%= participant.rate_per_person %></td>
+  <%end%>
+</tr>
+<%end%>
+</table>
+
+  <h3>Non-Veg</h3>
+<table id="customers" style="width:80%;">
+<tr>
+  <th colspan="2">Starters</th>
+</tr>
+<% @event.participants.each do |participant| %>
+
+<tr>
+  <% if participant.type_of_food == 'Starter' && ! participant.veg %>
+    <td><%= participant.name_of_food %></td>
+    <td>Rs. <%= participant.rate_per_person %></td>
+  <%end%>
+</tr>
+<%end%>
+<tr>
+  <th colspan="2">Main Course</th>
+</tr>
+<% @event.participants.each do |participant| %>
+<tr>
+  <% if participant.type_of_food == 'Main Course' && ! participant.veg %>
+    <td><%= participant.name_of_food %></td>
+    <td>Rs. <%= participant.rate_per_person %></td>
+  <%end%>
+</tr>
+<%end%>
+<tr>
+  <th colspan="2">Dessert</th>
+</tr>
+<% @event.participants.each do |participant| %>
+<tr>
+  <% if participant.type_of_food == 'Dessert' && ! participant.veg %>
+    <td><%= participant.name_of_food %></td>
+    <td>Rs. <%= participant.rate_per_person %></td>
+  <%end%>
+</tr>
+<%end%>
+</table>
+</body>
+
+<p><%= link_to 'Back', event_path %></p>

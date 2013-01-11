@@ -3,7 +3,7 @@
 # and open the template in the editor.
 %>
 <%  now = DateTime.now %>
-<table id="myTable" class="tablesorter" style="width:100%;">
+<table id="myTable" class="tablesorter" style="width:75%;">
   <thead>
   <tr>
     <th>Participant Name:</th>
@@ -11,7 +11,7 @@
     <th>Type Of Food:</th>
     <th>Name Of Food:</th>
     <th>Food will serve:</th>
-    <th>Rate per Person:</th>
+    <th>Rate per Person:(Rs)</th>
     <%  unless @event.date_of_event < now %>
     <th></th>
     <%end%>
@@ -20,7 +20,6 @@
 <tbody>
 
 <% @event.participants.each do |participant| %>
-  <%p @event.participants %>
 <tr>
   <td><%= participant.name.capitalize %></td>
   <% if participant.veg %>
@@ -30,8 +29,8 @@
   <%end%>
   <td><%= participant.type_of_food %></td>
   <td><%= participant.name_of_food %></td>
-  <td><%= participant.quantity %> People</td>
-  <td>Rs. <%= participant.rate_per_person %></td>
+  <td><%= participant.quantity %></td>
+  <td><%= participant.rate_per_person %></td>
   
   <%  unless @event.date_of_event < now %>
   <td colspan="2"><%= link_to 'Destroy Participant', [participant.event, participant],:confirm => 'Are you sure?', :method => :delete %></td>

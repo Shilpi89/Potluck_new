@@ -1,5 +1,5 @@
 
-<h1>Listing Potluck Events</h1>
+<h1>Potluck Events Home</h1>
 <%  now = DateTime.now %>
 <%= paginate @events %>
 <table id="myTable" class="tablesorter" style="width:100%;">
@@ -10,7 +10,7 @@
     <th>Venue</th>
     <th>Description</th>
     <th>Organizing team</th>
-    <th>Menu</th>
+    <!--th>Menu</th-->
     <th>Fund Raised</th>
     <th></th>
     <th></th>
@@ -26,13 +26,13 @@
     <td><%= event.venue %></td>
     <td><%= event.description %></td>
     <td><%= event.users.map(&:name).join(', ')%></td>
-    
-    <td>
-    <%if event.menu_file_name %>
-    <%= link_to event.menu_file_name, event.menu.url(:original, false) %>
-    <%else%>
-    Not uploaded yet<%end%>
-    </td>
+
+    <!--td-->
+    <%#if event.menu_file_name %>
+    <%#= link_to event.menu_file_name, event.menu.url(:original, false) %>
+    <%#else%>
+    <%#end%>
+    <!--/td-->
     <td><%= total_fund_amt(event.id) %></td>
     <%  unless event.date_of_event < now %>
     <td><%= link_to 'Click to Participate!', event %></td>
@@ -49,4 +49,4 @@
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Create New Event', new_event_path %>

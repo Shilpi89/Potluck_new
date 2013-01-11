@@ -57,7 +57,22 @@ color:#000000;
 background-color:#EAF2D3;
 }
 
-#signout
+div.header
 {
+background-color: #EAF2D3;
+border: medium black;
+}
+
+div.header h3
+{
+color: #A7C942;
+padding-top: 10px;
+padding-left: 10px;
+}
+div.header h4
+{
+color: #A7C942;
+padding-bottom: 10px;
+padding-right: 10px;
 text-align: right
 }

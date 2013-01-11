@@ -5,6 +5,8 @@ PotluckNew::Application.routes.draw do
     resources :participants
   end
 
+  get "/events/:id/menu" => "events#menu", :as => :event_menu
+
 
   devise_for :users do
     get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
