@@ -10,6 +10,13 @@ development:
   password: root
   host: 127.0.0.1
 
+test:
+  adapter: mysql2
+  database: potluck_new_app_test
+  username: root
+  password: root
+  host: 127.0.0.1
+
 production:
   adapter: mysql2
   database: potluck_new_app

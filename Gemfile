@@ -14,6 +14,10 @@ gem 'dynamic_form'
 gem "paperclip", "~> 3.0"
 gem 'kaminari'
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+end
+
 group :production do
   gem 'pg'
 end

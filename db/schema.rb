@@ -27,21 +27,9 @@ ActiveRecord::Schema.define(:version => 20130103075300) do
     t.datetime "menu_updated_at"
   end
 
-  create_table "events_organizers", :force => true do |t|
-    t.integer "event_id"
-    t.integer "organizer_id"
-  end
-
   create_table "events_users", :force => true do |t|
     t.integer "event_id"
     t.integer "user_id"
-  end
-
-  create_table "organizers", :force => true do |t|
-    t.string   "name"
-    t.string   "emp_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "participants", :force => true do |t|

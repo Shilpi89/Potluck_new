@@ -86,7 +86,7 @@ class EventsController < ApplicationController
   end
 
 
-def menu
+  def menu
     @event = Event.find(params[:id])
     respond_to do |format|
       format.html  #menu.html.erb
