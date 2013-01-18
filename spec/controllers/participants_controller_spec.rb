@@ -11,16 +11,16 @@ before :each do
 
 def valid_attributes
   {
-    :name=>'part1',:name_of_food=>'food',:quantity=>'10',:rate_per_person=>'10', :event_id => @event.id
+    :name=>'part1',:name_of_food=>'food',:quantity=>'10',:rate_per_person=>'10'
   }
 end
 describe "POST create" do
     describe "with valid params" do
-      #it "creates a new Participant" do
-        #expect {
-          #post :create, {:participant => valid_attributes}
-        #}.to change(Participant, :count).by(1)
-      #end
+      it "creates a new Participant" do
+        expect {
+        post :create, {:event_id => @event.id , :participant => valid_attributes}
+        }.to change(Participant, :count).by(1)
+      end
     end
   end
 
